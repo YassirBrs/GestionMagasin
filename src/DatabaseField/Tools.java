@@ -15,6 +15,7 @@ public class Tools {
 		 Image img = new Image(new FileInputStream(path));
 	     // simple displays ImageView the image as is
 	     ImageView imgview = new ImageView();
+	     
 	     imgview.setImage(img);
 	  return imgview;
 	}
