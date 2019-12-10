@@ -156,7 +156,7 @@ public class CategorieDisplay extends Application{
 	            		messageAction.setText("Categorie bien modifier.");
 	            	}else{
 	            		messageSelect.setFill(Color.RED);
-	            		messageSelect.setText("Categorie n'est pas selectionn� !");
+	            		messageSelect.setText("Categorie n'est pas selectionné !");
 	            		messageAction.setFill(Color.RED);
 	            		messageAction.setText("Veuillez selectionner une categorie !");
 	            	}
@@ -181,7 +181,7 @@ public class CategorieDisplay extends Application{
 	            		messageAction.setText("Categorie bien supprimer.");
 	            	}else{
 	            		messageSelect.setFill(Color.RED);
-	            		messageSelect.setText("Categorie n'est pas selectionn� !");
+	            		messageSelect.setText("Categorie n'est pas selectionné !");
 	            		messageAction.setFill(Color.RED);
 	            		messageAction.setText("Veuillez selectionner une categorie !");
 	            	}

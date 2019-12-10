@@ -31,7 +31,7 @@ public class ProduitDaoImpl extends AbstractDao implements ProduitDao {
 	public void update(Produit p) {
 		try {
 			Connection conn = AbstractDao.getCon().getConnexion();
-			PreparedStatement ps = conn.prepareStatement("UPDATE produit SET designation=?, prixAchat=?, prixVente=?, codecat=? WHERE code=?");
+			PreparedStatement ps = conn.prepareStatement("UPDATE produit SET designation=?, prixAchat=?, prixVente=?, codecat=? WHERE id=?");
 			ps.setString(1, p.getDesignation());
 			ps.setDouble(2, p.getPrixAchat());
 			ps.setDouble(3, p.getPrixVente());
@@ -48,7 +48,7 @@ public class ProduitDaoImpl extends AbstractDao implements ProduitDao {
 	public void delete(long c) {
 		try {
 			Connection conn = AbstractDao.getCon().getConnexion();
-			PreparedStatement ps = conn.prepareStatement("DELETE FROM produit WHERE code=?");
+			PreparedStatement ps = conn.prepareStatement("DELETE FROM produit WHERE id=?");
 			ps.setLong(1, c);
 			ps.executeUpdate();
 			ps.close();
@@ -122,30 +122,30 @@ public class ProduitDaoImpl extends AbstractDao implements ProduitDao {
 		}
 	}
 
-	public Produit getOne(String designation) {
-		try {
-			Connection conn = AbstractDao.getCon().getConnexion();
-			String req = "SELECT * FROM produit INNER JOIN Categorie ON produit.codecat=Categorie.codecateg WHERE produit.designation=?";
-			PreparedStatement ps = conn.prepareStatement(req);
-			ps.setString(1, designation);
-			ResultSet rs = ps.executeQuery();
-			Produit p = new Produit();
-			boolean b = false;
-			if(rs.next())
-			{
-				b = true;
-				p.setCode(Long.parseLong(rs.getString(1)));
-				p.setDesignation(rs.getString(2));
-				p.setPrixAchat(Double.parseDouble(rs.getString(3)));
-				p.setPrixVente(Double.parseDouble(rs.getString(4)));
-				p.setCat(new Categorie(Long.parseLong(rs.getString(5)), rs.getString(7)));
-			}
-			conn.close();
-			if(b == true)
-				return p;
-			return null;
-		} catch (Exception e) {
-			return null;
-		}
-	}
+//	public Produit getOne(String designation) {
+//		try {
+//			Connection conn = AbstractDao.getCon().getConnexion();
+//			String req = "SELECT * FROM produit INNER JOIN Categorie ON produit.codecat=Categorie.codecateg WHERE produit.designation=?";
+//			PreparedStatement ps = conn.prepareStatement(req);
+//			ps.setString(1, designation);
+//			ResultSet rs = ps.executeQuery();
+//			Produit p = new Produit();
+//			boolean b = false;
+//			if(rs.next())
+//			{
+//				b = true;
+//				p.setCode(Long.parseLong(rs.getString(1)));
+//				p.setDesignation(rs.getString(2));
+//				p.setPrixAchat(Double.parseDouble(rs.getString(3)));
+//				p.setPrixVente(Double.parseDouble(rs.getString(4)));
+//				p.setCat(new Categorie(Long.parseLong(rs.getString(5)), rs.getString(7)));
+//			}
+//			conn.close();
+//			if(b == true)
+//				return p;
+//			return null;
+//		} catch (Exception e) {
+//			return null;
+//		}
+//	}
 }

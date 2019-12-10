@@ -198,7 +198,7 @@ public class ApplicationJavaFx extends Application{
 		TableColumn<Produit, Long> codeCol=new TableColumn<>("code");
 		codeCol.setCellValueFactory(new PropertyValueFactory<>("code"));
 		
-		TableColumn<Produit, String> designationCol=new TableColumn<>("Désignation");
+		TableColumn<Produit, String> designationCol=new TableColumn<>("Designation");
 		designationCol.setCellValueFactory(new  PropertyValueFactory<>("designation"));
 
 		TableColumn<Produit, Double> prixAchatCol=new TableColumn<>("Prix Achat");
@@ -275,7 +275,7 @@ public class ApplicationJavaFx extends Application{
 
 	private Pane createContentBottom(){
 		Pane hbox=new HBox();
-		Text text=new Text("All Right Reserved 2019 Developped By Yassir BOURAS");
+		Text text=new Text("Developped By Yassir BOURAS");
 		text.setFill(Color.WHITE);
 		hbox.getChildren().add(text);
 		hbox.setId("bottomPane");
@@ -367,38 +367,32 @@ public class ApplicationJavaFx extends Application{
         });
 		
 		Hyperlink link6=new Hyperlink("Suprimer");
-		link6.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent t) {
-                if(produitSelected != null){
-                	deletePrd(produitSelected.getCode());
-                }else{
-                	msg.setText("Veuillez selectionner un produit.");
-                }
-            }
-        });
+		link6.setOnAction(t -> {
+			if(produitSelected != null){
+				deletePrd(produitSelected.getCode());
+			}else{
+				msg.setText("Veuillez selectionner un produit.");
+			}
+		});
 		Hyperlink link7=new Hyperlink("Les Clients");
-		link7.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent t) {
-            	ClientDiplay frmAC = new ClientDiplay();
-                Stage w = new Stage();
-                Stage stage; 
-                try {
-                	if(bClient == true){
-                		if(ClientDiplay.message != null){
-			                stage = (Stage) ClientDiplay.message.getScene().getWindow();
-			                if(!stage.isShowing()){
-			                	frmAC.start(w);}
-			        }}
-                } catch (Exception e) { System.out.println("Erreur !"); }
-                try {
-                	if(bClient == false){
-                		frmAC.start(w); bClient = true;
-                	}
-                } catch (Exception e) { e.printStackTrace(); }
-            }
-        });
+		link7.setOnAction(t -> {
+			ClientDiplay frmAC = new ClientDiplay();
+			Stage w = new Stage();
+			Stage stage;
+			try {
+				if(bClient == true){
+					if(ClientDiplay.message != null){
+						stage = (Stage) ClientDiplay.message.getScene().getWindow();
+						if(!stage.isShowing()){
+							frmAC.start(w);}
+				}}
+			} catch (Exception e) { System.out.println("Erreur !"); }
+			try {
+				if(bClient == false){
+					frmAC.start(w); bClient = true;
+				}
+			} catch (Exception e) { e.printStackTrace(); }
+		});
 		Hyperlink link8=new Hyperlink("Categories");
 		link8.setOnAction(new EventHandler<ActionEvent>() {
             @Override

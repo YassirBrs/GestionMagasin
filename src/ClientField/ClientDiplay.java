@@ -100,9 +100,8 @@ public class ClientDiplay extends Application{
 		brd.setTop(createContentTop());
 		brd.setCenter(createContentCenter());
 		Scene scene = new Scene(brd, 200, 300, Color.WHITE);
-		File f = new File("css/style.css");
-		scene.getStylesheets().clear();
-		scene.getStylesheets().add("file:///" + f.getAbsolutePath().replace("\\", "/"));
+//		scene.getStylesheets().clear();
+		scene.getStylesheets().add("file:css/style.css");
 		window.setScene(scene);
 		window.show();
 	}
@@ -199,15 +198,15 @@ public class ClientDiplay extends Application{
 		pane.setId("clientCenter");
 		((VBox)pane).setSpacing(12);
 		pane.setPrefWidth(500);
-		Text labelId=new Text("Matricule :");
+		Text labelId=new Text("ID :");
 		Text labelNom=new Text("Nom :");
 		Text labelPrenom=new Text("Prenom :");
-		Text labelTele=new Text("Tele :");
+		Text labelTele=new Text("Telephone :");
 		Text labelEmail=new Text("Email :");
 		Text labelAdress=new Text("Adresse :");
 		
 		getClients();
-		TableColumn<Client, Integer> idCol=new TableColumn<>("Matricule");
+		TableColumn<Client, Integer> idCol=new TableColumn<>("ID");
 		idCol.setCellValueFactory(new PropertyValueFactory<>("id"));
 		
 		TableColumn<Client, String> nomCol=new TableColumn<>("Nom");
@@ -216,7 +215,7 @@ public class ClientDiplay extends Application{
 		TableColumn<Client, String> prenomCol=new TableColumn<>("Prenom");
 		prenomCol.setCellValueFactory(new  PropertyValueFactory<>("Prenom"));
 		
-		TableColumn<Client, String> teleCol=new TableColumn<>("Tele");
+		TableColumn<Client, String> teleCol=new TableColumn<>("Telephone");
 		teleCol.setCellValueFactory(new  PropertyValueFactory<>("Tele"));
 		
 		TableColumn<Client, String> AdresseCol=new TableColumn<>("Adresse");

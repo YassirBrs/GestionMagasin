@@ -39,7 +39,7 @@ public class ProduitEdit extends Application{
 	public void start(Stage window) throws Exception {
 //		window.initModality(Modality.APPLICATION_MODAL);
 		window.setWidth(500);
-		window.setHeight(520);
+		window.setHeight(620);
 		window.setTitle("Modification du produit");		
 		txtCode.setText(ApplicationJavaFx.produitSelected.getCode()+"");
 		txtDesignation.setText(ApplicationJavaFx.produitSelected.getDesignation()+"");
@@ -52,7 +52,7 @@ public class ProduitEdit extends Application{
 		Scene scene = new Scene(brd, 200, 300, Color.WHITE);
 		File f = new File("css/style.css");
 		scene.getStylesheets().clear();
-		scene.getStylesheets().add("file:///" + f.getAbsolutePath().replace("\\", "/"));
+		scene.getStylesheets().add("file:css/style.css");
 		window.setScene(scene);
 		window.show();
 	}
@@ -112,8 +112,8 @@ public class ProduitEdit extends Application{
 		((VBox)pane).setSpacing(12);
 		pane.setPrefWidth(500);
 		Text labelCode=new Text("Code:");
-		Text labelDesignation=new Text("D�signation:");
-		Text labelCategorie=new Text("Cat�gorie:");
+		Text labelDesignation=new Text("Désignation:");
+		Text labelCategorie=new Text("Catégorie:");
 		Text labelPrixAchat=new Text("Prix achat:");
 		Text labelPrixVente=new Text("Prix Vente:");
 		txtCode.setDisable(true);
@@ -126,7 +126,7 @@ public class ProduitEdit extends Application{
             @Override
             public void handle(ActionEvent t) {
             	message.setFill(Color.ORANGE);
-				message.setText("Categorie bien selectionn�.");
+				message.setText("Categorie bien selectionné.");
 				CategorieSelect frmCAT = new CategorieSelect();
                 Stage w = new Stage();
                 try { frmCAT.start(w); } 

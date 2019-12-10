@@ -96,15 +96,15 @@ public class ProduitAdd extends Application{
 		
 //		window.initModality(Modality.APPLICATION_MODAL);
 		window.setWidth(540);
-		window.setHeight(650);
+		window.setHeight(750);
 		window.setTitle("Ajouter un produit");
 		BorderPane brd = new BorderPane();
 		brd.setTop(createContentTop());
 		brd.setCenter(createContentCenter());
 		Scene scene = new Scene(brd, 200, 300, Color.WHITE);
-		File f = new File("css/style.css");
-		scene.getStylesheets().clear();
-		scene.getStylesheets().add("file:///" + f.getAbsolutePath().replace("\\", "/"));
+//		File f = new File("css/style.css");
+//		scene.getStylesheets().clear();
+		scene.getStylesheets().add("file:css/style.css");
 		window.setScene(scene);
 		window.show();
 	}
@@ -157,8 +157,8 @@ public class ProduitAdd extends Application{
 		((VBox)pane).setSpacing(12);
 		pane.setPrefWidth(500);
 		Text labelCode=new Text("Code:");
-		Text labelDesignation=new Text("Désignation:");
-		Text labelCategorie=new Text("Catégorie:");
+		Text labelDesignation=new Text("Designation:");
+		Text labelCategorie=new Text("Categorie:");
 		Text labelPrixAchat=new Text("Prix achat:");
 		Text labelPrixVente=new Text("Prix Vente:");
 		Text prev =new Text("La vignette:");
