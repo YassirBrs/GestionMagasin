@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="JAVA_MODULE" version="4">
   <component name="EclipseModuleManager">
-    <libelement value="file://C:/Users/Ilyas/Desktop/Etude/JAVA/MySql/mysql-connector-java-5.1.15-bin.jar" />
+    <libelement value="file://‪C:/Users/xps/Downloads/Compressed/com.mysql.jdbc_5.1.5.jar" />
     <src_description expected_position="1">
       <src_folder value="file://$MODULE_DIR$/src" expected_position="1" />
     </src_description>
@@ -15,9 +15,9 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library">
-      <library name="mysql-connector-java-5.1.15-bin.jar">
+      <library name="com.mysql.jdbc_5.1.5.jar">
         <CLASSES>
-          <root url="file://C:/Users/Ilyas/Desktop/Etude/JAVA/MySql/mysql-connector-java-5.1.15-bin.jar" />
+          <root url="file://‪C:/Users/xps/Downloads/Compressed/com.mysql.jdbc_5.1.5.jar" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
